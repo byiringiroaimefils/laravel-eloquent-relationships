@@ -22,13 +22,14 @@ We have User and Verification table. Each User should only have one verification
 
 ```php
 // \App\Models\User.php
+namespace App\Models;
 class User extends Model {
     /**
      * Get verification data of a User
      */
     public function verification()
     {
-        $this->hasOne(\App\Models\Verification::class);
+       return $this->hasOne(Verification::class);
     }
 }
 
@@ -39,7 +40,7 @@ class Verification extends Model {
      */
     public function user()
     {
-        $this->belongsTo(\App\Models\User::class);
+       return $this->belongsTo(User::class);
     }
 }
 
