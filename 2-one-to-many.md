@@ -22,13 +22,14 @@ We have User and Post table. Each User can have multiple Posts, but a Post shoul
 
 ```php
 // \App\Models\User.php
+\App\Models
 class User extends Model {
     /**
      * Get posts data of a User
      */
     public function posts()
     {
-        $this->hasMany(\App\Models\Post::class);
+       return  $this->hasMany(Post::class);
     }
 }
 
@@ -39,7 +40,7 @@ class Post extends Model {
      */
     public function user()
     {
-        $this->belongsTo(\App\Models\User::class);
+        return  $this->belongsTo(User::class);
     }
 }
 
